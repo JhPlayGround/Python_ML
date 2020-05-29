@@ -1,5 +1,8 @@
 #파이썬으로 퍼셉트론 학습 알고리즘 구현 
 import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib.colors import ListedColormap
 
 class Perceptron(object):
     """퍼셉트론 분류기
@@ -65,15 +68,14 @@ class Perceptron(object):
 
 
 
-import pandas as pd
+
 df = pd.read_csv('https://archive.ics.uci.edu/ml/''machine-learning-databases/iris/iris.data',
                   header=None)
 df.tail()
 
 
 
-import matplotlib.pyplot as plt
-import numpy as np
+
 
 # setosa와 versicolor를 선택합니다
 y = df.iloc[0:100, 4].values
@@ -101,7 +103,7 @@ plt.show()
 
 
 
-from matplotlib.colors import ListedColormap
+
 
 def plot_decision_regions(X, y, classifier, resolution=0.02):
 
