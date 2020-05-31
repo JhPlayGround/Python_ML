@@ -92,3 +92,17 @@ plt.xlabel('C')
 plt.legend(loc = 'upper left')
 plt.xscale('log')
 plt.show()
+
+
+#사이킷런의 다른 구현 
+from sklearn.linear_model import SGDClassifier
+lr2 = SGDClassifier(loss='log')
+lr2.fit(X_train_std, y_train)
+
+plot_decision_regions(X_combined_std, y_combined_std, classifier=lr2, test_idx=range(105,150))
+
+plt.xlabel('petal length [standardized]')
+plt.ylabel('petal width [standardized]')
+plt.legend(loc = 'upper left')
+plt.tight_layout()
+plt.show()
