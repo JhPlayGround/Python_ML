@@ -14,13 +14,13 @@ iris = datasets.load_iris()
 X = iris.data[:, [2,3]]
 y = iris.target
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state = 1, stratify = y) # 계층화 기능 사용
-X_combined_std = np.vstack((X_train,X_test))
-y_combined_std = np.hstack((y_train, y_test))
+X_combined = np.vstack((X_train,X_test))
+y_combined = np.hstack((y_train, y_test))
 
 tree = DecisionTreeClassifier(criterion = 'gini', max_depth = 4, random_state = 1)
 tree.fit(X_train, y_train)
 
-prd.plot_decision_regions(X_combined_std, y_combined_std, classifier = tree, test_idx = range(105,150))
+prd.plot_decision_regions(X_combined, y_combined, classifier = tree, test_idx = range(105,150))
 
 plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
