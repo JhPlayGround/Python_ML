@@ -32,6 +32,6 @@ X_test_norm = mms.fit_transform(X_test)
 #제한된 범위로 데이터를 조정하는 최소-최대 스케일 변환에 비해 알고리즘이 이상치에 덜 민감
 from sklearn.preprocessing import StandardScaler
 
-sc = StandardScaler
+sc = StandardScaler()
 X_train_std = sc.fit_transform(X_train)
 X_test_std = sc.fit_transform(X_test)
