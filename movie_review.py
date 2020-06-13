@@ -14,7 +14,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 
-"""
 with tarfile.open('aclImdb_v1.tar.gz','r:gz') as tar:
     tar.extractall()
 
@@ -38,7 +37,6 @@ df.columns = ['review', 'sentiment']
 np.random.seed(0)
 df = df.reindex(np.random.permutation(df.index))
 df.to_csv('movie_data.csv', index=False, encoding='utf-8')
-"""
 
 df = pd.read_csv('movie_data.csv', encoding='utf-8')
 print(df.head(3))
